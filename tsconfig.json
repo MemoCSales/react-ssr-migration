@@ -9,7 +9,7 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["src/app/*"]
     },
     "rootDirs": [".", "./.react-router/types"],
     "esModuleInterop": true,
