@@ -11,10 +11,13 @@
   "dependencies": {
     "@react-router/node": "^7.13.1",
     "@react-router/serve": "^7.13.1",
+    "@rescui/button": "^0.23.3",
+    "@rescui/card": "^0.13.10",
+    "@rescui/typography": "^0.24.3",
+    "isbot": "^5",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router": "^7.13.1",
-    "isbot": "^5"
+    "react-router": "^7.13.1"
   },
   "devDependencies": {
     "@react-router/dev": "^7.13.1",
