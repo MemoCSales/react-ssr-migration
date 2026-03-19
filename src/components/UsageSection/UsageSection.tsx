@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Button from '@rescui/button';
+import { Button } from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { cardCn } from '@rescui/card';
 import { ThemeProvider } from '@rescui/ui-contexts';
@@ -16,7 +16,6 @@ function UsageSectionContent() {
 
 	const [sortByName, setSortByName] = useState(false);
 
-	// localStorage solo en cliente
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
 			const savedOrder = localStorage.getItem('kotlin-testimonials-order');
