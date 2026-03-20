@@ -19,13 +19,7 @@ export function ProgrammingLanguage() {
   const textCn = useTextStyles();
   const [activeIndex, setActiveIndex] = useState<number>(initialIndex);
 
-  const highlighted = (() => {
-    const el = document.createElement('code');
-    el.className = 'language-kotlin';
-    el.textContent = tabs[activeIndex].code;
-    hljs.highlightBlock(el);
-    return el.innerHTML;
-  })();
+  const highlighted = hljs.highlight(tabs[activeIndex].code, { language: 'kotlin' }).value;
 
   return (
     <div className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
