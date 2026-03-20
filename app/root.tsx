@@ -1,5 +1,7 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import { ThemeProvider } from "@rescui/ui-contexts";
+import '../src/styles/base.scss';
+import '../src/styles/grid.scss';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

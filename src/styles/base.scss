@@ -6,7 +6,7 @@ button,
 input,
 select,
 textarea {
-    font-family: config/font.$font-family-sans-serif;
+    font-family: font.$font-family-sans-serif;
 }
 
 pre,
@@ -14,7 +14,7 @@ code,
 var,
 kbd,
 samp {
-    font-family: config/font.$font-family-mono;
+    font-family: font.$font-family-mono;
 }
 
 html {
@@ -24,19 +24,19 @@ html {
 
 body {
     height: 100%;
-    color: config/base.$base-color;
-    font-size: config/base.$base-font-size;
-    line-height: config/base.$base-line-height;
-    background-color: #fff;
+    color: base.$base-color;
+    font-size: base.$base-font-size;
+    line-height: base.$base-line-height;
+    background-color: #19191c;
 }
 
 a {
-    color: config/base.$base-link-color;
+    color: base.$base-link-color;
     text-decoration: underline
 }
 
 a:hover {
-    color: config/base.$base-link-hover-color;
+    color: base.$base-link-hover-color;
 }
 
 .hidden {
