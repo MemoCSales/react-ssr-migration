@@ -1,10 +1,5 @@
-import { Layout } from "../../src/components/Layout/Layout";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 
-export default function RootLayout(){
-  return (
-    <Layout>
-      <Outlet />
-    </Layout>
-  )
+export default function RootLayout() {
+  return <Outlet />;
 }
