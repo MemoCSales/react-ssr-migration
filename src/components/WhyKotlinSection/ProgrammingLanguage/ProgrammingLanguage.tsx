@@ -8,7 +8,7 @@ import kotlin from 'highlight.js/lib/languages/kotlin';
 
 import { tabs } from './data';
 
-import 'highlight.js/styles/github-dark.css';
+import 'highlight.js/styles/github.css';
 import './ProgrammingLanguage.module.scss';
 
 hljs.registerLanguage('kotlin', kotlin);

@@ -13,7 +13,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider theme="dark">
+        <ThemeProvider theme="light">
           {children}
         </ThemeProvider>
         <ScrollRestoration />
