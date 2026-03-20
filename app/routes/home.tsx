@@ -1,17 +1,17 @@
-import type { Route } from "./+types/home";
+import { HeaderSection } from "src/components/HeaderSection/HeaderSection";
+import { LatestFromKotlinSection } from "src/components/LatestFromKotlinSection/LatestFromKotlinSection";
+import { StartSection } from "src/components/StartSection/StartSection";
+import { UsageSection } from "src/components/UsageSection/UsageSection";
+import { WhyKotlinSection } from "src/components/WhyKotlinSection/WhyKotlinSection";
 
-export function meta(_args: Route.MetaArgs) {
-  return [
-    { title: "React SSR Migration" },
-    { name: "description", content: "React Router 7 Framework Mode with SSR" },
-  ];
-}
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
-      <h1>Welcome to React Router 7</h1>
-      <p>Server-side rendering is enabled via Vite and React Router Framework Mode.</p>
-    </main>
-  );
+    <>
+      <HeaderSection />
+      <LatestFromKotlinSection />
+      <WhyKotlinSection />
+      <UsageSection />
+      <StartSection />
+    </>
+  )
 }
