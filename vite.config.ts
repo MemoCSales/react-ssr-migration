@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [reactRouter()],
   ssr: {
     noExternal: ['@rescui/button', '@rescui/card', '@rescui/tab-list', '@rescui/typography'],
-  }
+  },
 });
