@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import './Layout.module.scss';
+import './Layout.scss';
 
 interface SectionProps {
   children: ReactNode;
@@ -11,26 +11,17 @@ interface ContainerProps {
   children: ReactNode;
 }
 
-export function Section({ children, className= '' }: SectionProps) {
-  return ( <section className={`kto-layout-section ${className}`}>
+export function Section({ children, className = '' }: SectionProps) {
+  return (
+    <section className={`kto-layout-section ${className}`.trim()}>
       {children}
     </section>
-  )
+  );
 }
 
 export function Container({ children }: ContainerProps) {
-  return ( <div className="kto-layout-container">
+  return (<div className="kto-layout-container">
     {children}
   </div>
-  )
-}
-
-export function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <Section>
-      <Container>
-        {children}
-      </Container>
-    </Section>
   )
 }

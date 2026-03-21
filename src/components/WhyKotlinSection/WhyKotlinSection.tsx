@@ -1,13 +1,14 @@
 import { Button } from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
-
+import { ThemeProvider } from '@rescui/ui-contexts';
 import cn from 'classnames';
 
+import { Section, Container } from '../Layout/Layout';
 import { sections } from './data'
 import multiplatformImg from '../../assets/images/index/multiplatform.svg';
 import { ProgrammingLanguage } from './ProgrammingLanguage/ProgrammingLanguage';
 
-import './WhyKotlinSection.module.scss';
+import './WhyKotlinSection.scss';
 
 function YouTubeEmbed({ id }: { id: string }) {
   return (
@@ -27,49 +28,55 @@ function YouTubeEmbed({ id }: { id: string }) {
 function WhyKotlinContent() {
   const textCn = useTextStyles();
   return (
-    <div className="why-kotlin-section">
-      <h2 className={textCn('rs-hero')}>Why Kotlin</h2>
+    <div>
+      <Section className="why-kotlin-section">
+        <Container>
+          <h2 className={textCn('rs-hero')}>Why Kotlin</h2>
 
-      <ProgrammingLanguage />
+          <ProgrammingLanguage />
 
-      {sections.map((section, index) => (
-        <div key={index} className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
-          <div className="kto-col-4 kto-col-md-12">
-            <h3 className={textCn('rs-h2')}>{section.title}</h3>
-            <p className={cn(textCn('rs-text-2'), 'kto-offset-top-32')}>
-              {section.description}
-            </p>
-            <div className="kto-offset-top-32">
-              <Button
-                mode="outline"
-                size="l"
-                href={section.buttonLink}
-              >
-                {section.buttonText}
-              </Button>
+          {sections.map((section, index) => (
+            <div key={index} className="kto-grid kto-grid-gap-32 kto-offset-top-96 kto-offset-top-md-48">
+              <div className="kto-col-4 kto-col-md-12">
+                <h3 className={textCn('rs-h2')}>{section.title}</h3>
+                <p className={cn(textCn('rs-text-2'), 'kto-offset-top-32')}>
+                  {section.description}
+                </p>
+                <div className="kto-offset-top-32">
+                  <Button
+                    mode="outline"
+                    size="l"
+                    href={section.buttonLink}
+                  >
+                    {section.buttonText}
+                  </Button>
+                </div>
+              </div>
+
+              <div className="kto-col-8 kto-col-md-12">
+                {section.media === 'youtube' && (
+                  <YouTubeEmbed id={section.youtubeId ?? ''} />
+                )}
+                {section.media === 'image' && (
+                  <img
+                    src={multiplatformImg}
+                    alt="Kotlin Multiplatform"
+                    className="why-kotlin-section__image"
+                  />
+                )}
+              </div>
             </div>
-          </div>
-
-          <div className="kto-col-8 kto-col-md-12">
-            {section.media === 'youtube' && (
-              <YouTubeEmbed id={section.youtubeId ?? ''} />
-            )}
-            {section.media === 'image' && (
-              <img
-                src={multiplatformImg}
-                alt="Kotlin Multiplatform"
-                className="why-kotlin-section__image"
-              />
-            )}
-          </div>
-        </div>
-      ))}
+          ))}
+        </Container>
+      </Section>
     </div>
   );
 }
 
 export function WhyKotlinSection() {
   return (
-    <WhyKotlinContent />
+    <ThemeProvider theme="light">
+      <WhyKotlinContent />
+    </ThemeProvider>
   );
 }
