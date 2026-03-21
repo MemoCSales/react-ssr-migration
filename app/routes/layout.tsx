@@ -1,10 +1,17 @@
-import { Layout } from "../../src/components/Layout/Layout";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
-export default function RootLayout(){
+export default function RootLayout() {
   return (
-    <Layout>
-      <Outlet />
-    </Layout>
+    <div className="global-layout">
+      <Header />
+
+      <div className="g-layout global-content">
+        <Outlet />
+      </div>
+
+      <Footer />
+    </div>
   )
 }
